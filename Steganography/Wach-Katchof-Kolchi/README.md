@@ -112,16 +112,15 @@ The *Loisirs* (hobbies) section says:
 
 > Devinettes. Ma preferee : **3ndha 3in w ma kat chof walo**. Achno hiya ?
 
-In written Darija, the digit **3** stands for the letter *ain*. The sentence means *"it has an eye and sees nothing"*. The answer is a **needle**: **lebra**.
+In written Darija, the digit **3** stands for the letter *ain*. The sentence means *"it has an eye and sees nothing"*. The answer is a **needle**: **libra**.
 
-The author writes in leet (`B0uB0u`, `K4ir0s`). Since `3` is already used for *ain*, the letter `e` becomes `1`. The rule is:
+And it's quite obvious that `3` stands for `e`, `1` for `i`, and `4` for `a` ..., Since `3` is already used for *ain*, the letter `i` becomes `1`. The rule is:
 
 ```
-a -> 4    e -> 1    o -> 0    i stays i
-lebra -> l1br4
+a -> 4    i -> 1    o -> 0    
+libra -> l1br4
 ```
 
-> **Trap:** the decoy key `k41r0s_2025` turns `i` into `1` (`k41r0s`), but the real rule leaves `i` unchanged (as in `K4ir0s`).
 
 ### Step 5: The faint digits
 
