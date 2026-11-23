@@ -24,6 +24,7 @@
 | --------- | ---------- | -------- | ------ | ------ | ------ | ------- |
 | Hide And Seek 1 | Easy | [Forensics](forensics) | 31 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Forensics/Hide-And-Seek-1) |
 | Ait Lmojawharat | Easy | [Forensics](forensics) | 13 | 500 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Forensics/Ait-Lmojawharat) |
+| Hide And Seek 2 | Medium | [Forensics](forensics) | 4 | 440 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Forensics/Hide-And-Seek-2) |
 | Haaa9 Mchaaa | Easy | [OSINT](osint) | 13 | 260 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](OSINT/Haa9-Mchaa) |
 | Ghost Frames | Easy | [Stego](stego) | 28 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/Ghost-Frames) |
 | You Cant Hide It | Easy | [Stego](stego) | 26 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/Wach-Katchof-Kolchi) |
