@@ -139,6 +139,139 @@ letter = 10010010 XOR 11010101 = 01000111 = 'G'
 
 For relay3, the XOR with the output gives the letter back: `output = R ^ letter`, so `letter = R ^ output`. The next state is `11010101` (the **written output**, not the CRC and not the letter).
 
+### Step 4b: The three relays in detail
+
+All three relays use the same line format and the same Gray-coded position, but each one hides the letter in a different place. Below, each relay is shown on **position 3**, where the hidden letter is `x` (`01111000`) in all three files. The state is the written output of position 2 of the same file.
+
+#### Relay1: the letter is hidden in `poly`
+
+| Parameter | Value |
+|---|---|
+| init | state |
+| poly | **letter XOR state** |
+| xorout | 0 (nothing) |
+| direction | MSB first (shift left) |
+
+*Construction (what the author did).* For each line the author picks `poly = letter ^ state`, computes `crc_msb(word, poly, init=state)`, and writes that value as the output.
+
+*Resolution (what the player does).* The letter is not stored anywhere, but `poly` has only 256 values. For each of them:
+
+1. compute `crc_msb(word, poly, init=state)`;
+2. if it equals the written output, `poly` is compatible;
+3. then `letter = poly ^ state`;
+4. keep the printable ones (32 to 126).
+
+*Example, relay1 position 3:*
+
+```
+word    = 00000010 11001101 01100001 00111110
+state   = 01010000      (output of position 2)
+output  = 10011000
+
+poly    = 00101000      (one of the 256 values that works)
+crc_msb(word, poly=0x28, init=0x50) = 10011000   -> equals the output
+letter  = poly XOR state = 00101000 XOR 01010000 = 01111000 = 'x'
+```
+
+Another poly gives the same output and a second candidate, `~`. That is why the result is a **set** of candidates (`x`, `~`) and not one letter, and why we need the other relays.
+
+#### Relay2: LSB-first and final XOR
+
+| Parameter | Value |
+|---|---|
+| init | state |
+| poly | **letter XOR state** |
+| xorout | **0xFF** (final XOR, once per line) |
+| direction | **LSB first (shift right)** |
+
+The letter is hidden in `poly` exactly like relay1. Two things change:
+
+- **The direction.** The register is shifted to the **right**, and the bit tested before each shift is the **last bit** (LSB). The 4 bytes of the word are still processed in the same order (left to right); only the inside of the byte loop changes:
+
+| Last bit of `r` | Operation in each round |
+|---|---|
+| 0 | `r = r >> 1` |
+| 1 | `r = (r >> 1) XOR poly` |
+
+- **The final XOR.** After the 4 bytes, the result is XORed **once** with `0xFF` (all bits flipped). It is done once at the end of the line, not in each round, and it is not used to recover the letter: the letter still comes from `poly ^ state`.
+
+*Test of a candidate:* `crc_lsb(word, poly, init=state) XOR 0xFF == output`.
+
+*Example, relay2 position 3:*
+
+```
+word    = 00000010 10011101 01100100 00111100
+state   = 01011100      (written output of position 2)
+output  = 11000100
+
+poly    = 00100100
+crc_lsb(word, poly=0x24, init=0x5C) = 00111011
+00111011 XOR 11111111               = 11000100   -> equals the output
+letter  = poly XOR state = 00100100 XOR 01011100 = 01111000 = 'x'
+```
+
+The first byte of the word (`00000010`) in the same example, round by round (`r = state XOR byte = 01011110` at the start):
+
+| Round | r before | Last bit | Operation | r after |
+|---|---|---|---|---|
+| 1 | `01011110` | 0 | shift right only | `00101111` |
+| 2 | `00101111` | 1 | shift right + XOR poly | `00110011` |
+| 3 | `00110011` | 1 | shift right + XOR poly | `00111101` |
+| 4 | `00111101` | 1 | shift right + XOR poly | `00111010` |
+| 5 | `00111010` | 0 | shift right only | `00011101` |
+| 6 | `00011101` | 1 | shift right + XOR poly | `00101010` |
+| 7 | `00101010` | 0 | shift right only | `00010101` |
+| 8 | `00010101` | 1 | shift right + XOR poly | `00101110` |
+
+At the end of the 4 bytes, the register is `00111011`; the final XOR with `0xFF` gives the written output. relay2 returns three candidates for this position (`1`, `d`, `x`); `x` is the one also supported by relay1 and relay3.
+
+#### Relay3: the letter is in the final XOR
+
+| Parameter | Value |
+|---|---|
+| init | **0** (always) |
+| poly | **state** |
+| xorout | **letter** |
+| direction | MSB first (shift left) |
+
+Here the letter is not in `poly` any more: it is the final XOR value. `poly` is simply the state, and `init` stays zero for every line.
+
+*Construction:* `output = crc_msb(word, poly=state, init=0) XOR letter`.
+
+*Resolution:* if `R = crc_msb(word, state, 0)`, then `output = R ^ letter`, so
+
+```
+letter = R XOR output        (because R XOR R = 0 and 0 XOR letter = letter)
+```
+
+There is no brute force: one computation gives **one** candidate.
+
+*Example, relay3 position 3:*
+
+```
+word    = 00000010 01101011 11000001 01010011
+state   = 00111110      (output of position 2)
+output  = 01000000
+
+R = crc_msb(word, poly=0x3E, init=0) = 00111000
+letter = 00111000 XOR 01000000 = 01111000 = 'x'
+```
+
+The state of the next line is `01000000` (the **written output**), not `R` and not the letter.
+
+**Why `init = 0` here?** It is a construction rule of this relay, not a CRC rule. A different init would also work, but then all the outputs would be computed with it.
+
+#### Summary
+
+| | relay1 | relay2 | relay3 |
+|---|---|---|---|
+| Where is the letter? | in `poly` (`letter ^ state`) | in `poly` (`letter ^ state`) | in `xorout` |
+| init | state | state | 0 |
+| Direction | MSB (left) | LSB (right) | MSB (left) |
+| Final XOR | 0 | `0xFF` | letter |
+| Recover the letter | brute force 256 polys | brute force 256 polys | one XOR |
+| Candidates per position | 0 to several | 0 to several | 0 or 1 |
+
 ### Step 5: The seeds
 
 The seed is the state of position 0. It is only 8 bits, so we try all 256 values and keep the ones for which `G` is a candidate in position 0:
