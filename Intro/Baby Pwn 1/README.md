@@ -7,8 +7,7 @@
 | **Type** | Dynamic |
 | **Points** | 500 |
 | **Author** | K4ir0s |
-| **Flag** | `GCDxGLORY{13}
-` |
+| **Flag** | `GCDxGLORY{13}` |
 
 ## Description
 
