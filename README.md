@@ -10,7 +10,7 @@
 
 # About us
 
-[Fs0ci3ty / Club GCDSTE ](https://github.com/GCDSTE-ENSA-M) is a cybersecurity team based in Marrakech, Morocco, in a school called [ENSA Marrakech](https://ensa-marrakech.uca.ma).
+[Club GCDSTE](https://github.com/GCDSTE-ENSA-M) is a cybersecurity team based in Marrakech, Morocco, in a school called [ENSA Marrakech](https://ensa-marrakech.uca.ma).
 
 To be continued...
 
