@@ -13,7 +13,7 @@
 <p align="center">
   <img src="img/logo-gcdste.png" alt="GCDSTE Club" width="300">
 </p>
-[Club GCDSTE ENSA-M](https://github.com/GCDSTE-ENSA-M) is a cybersecurity team based in Marrakech, Morocco, in ENSA Marrakech(https://ensa-marrakech.uca.ma).
+Club GCDSTE ENSA-M(https://github.com/GCDSTE-ENSA-M) is a cybersecurity team based in Marrakech, Morocco, in ENSA Marrakech(https://ensa-marrakech.uca.ma).
 
 
 ---
