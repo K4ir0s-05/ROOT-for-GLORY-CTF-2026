@@ -18,7 +18,7 @@
 
 *(Rough meaning: B0uB0u is looking for a job and wants to be a driver for me. His CV caused me trouble, but there is a hidden touch in it. "Look well, and don't forget to look..." Correct this if you meant something else.)*
 
-**Flag format:** `GCDSTE{...}` (not `GCDxGLORY`)
+**Flag format:** `GCDSTE{...}`
 
 ## Files
 
