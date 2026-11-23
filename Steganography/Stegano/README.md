@@ -7,7 +7,7 @@
 | **Type** | Dynamic |
 | **Points** | 500 |
 | **Author** | K4ir0s |
-| **Flag** | `GCDxGlORY{stegano_is_hiding_messages_in_plain_sight}` |
+| **Flag** | `GCDxGLORY{stegano_is_hiding_messages_in_plain_sight}` |
 
 ## Description
 
@@ -77,16 +77,16 @@ Open the file in HxD / ImHex and go to the end. The right side (ASCII column) sh
 The appended text is:
 
 ```
-"GCDxGlORY{stegano_is_hiding_messages_in_plain_sight}"
+"GCDxGLORY{stegano_is_hiding_messages_in_plain_sight}"
 ```
 
 ## Flag
 
 ```
-GCDxGlORY{stegano_is_hiding_messages_in_plain_sight}
+GCDxGLORY{stegano_is_hiding_messages_in_plain_sight}
 ```
 
-## What players should learn
+## Main Ideas For This Chall
 
 - A file's extension is only a name, the **magic bytes** show its real type.
 - Data placed **after the end marker** of a file (`IEND` for PNG, `FF D9` for JPEG) is invisible to viewers but still in the file.
