@@ -11,11 +11,10 @@
 # About us
 
 <p align="center">
-  <img src="img/logo-gcdste.png" alt="GCDSTE Club" width="400">
+  <img src="img/logo-gcdste.png" alt="GCDSTE Club" width="300">
 </p>
-[Club GCDSTE ENSA-M](https://github.com/GCDSTE-ENSA-M) is a cybersecurity team based in Marrakech, Morocco, in a school called [ENSA Marrakech](https://ensa-marrakech.uca.ma).
+[Club GCDSTE ENSA-M](https://github.com/GCDSTE-ENSA-M) is a cybersecurity team based in Marrakech, Morocco, in ENSA Marrakech(https://ensa-marrakech.uca.ma).
 
-To be continued...
 
 ---
 
@@ -23,8 +22,17 @@ To be continued...
 
 | Challenge | Difficulty | Category | Solves | Points | Author | Writeup |
 | --------- | ---------- | -------- | ------ | ------ | ------ | ------- |
-| Challenge 1 | Easy | [Forensics](forensics) | 0 | 100 | [author](https://github.com/author) | [Writeup](forensics/challenge-1) |
-| Challenge 2 | Easy | [Crypto](crypto) | 0 | 100 | [author](https://github.com/author) | [Writeup](crypto/challenge-2) |
-| Challenge 3 | Medium | [Stego](stego) | 0 | 300 | [author](https://github.com/author) | [Writeup](stego/challenge-3) |
-| Challenge 4 | Medium | [Reverse](reverse) | 0 | 300 | [author](https://github.com/author) | [Writeup](reverse/challenge-4) |
-| Challenge 5 | Hard | [Misc](misc) | 0 | 500 | [author](https://github.com/author) | tba |
+| Hide And Seek 1 | Easy | [Forensics](forensics) | 31 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Forensics/Hide-And-Seek-1) |
+| Ait Lmojawharat | Easy | [Forensics](forensics) | 13 | 500 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Forensics/Ait-Lmojawharat) |
+| Haaa9 Mchaaa | Easy | [OSINT](osint) | 13 | 260 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](OSINT/Haa9-Mchaa) |
+| Ghost Frames | Easy | [Stego](stego) | 28 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/Ghost-Frames) |
+| You Cant Hide It | Easy | [Stego](stego) | 26 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/Wach-Katchof-Kolchi) |
+| Stegano | Easy | [Stego](stego) | 18 | 160 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/Stegano) |
+| Tchwich | Easy | [Stego](stego) | 21 | 100 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/Tchwich) |
+| ALWAN | Medium | [Stego](stego) | 0 | 500 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/ALWAN) |
+| Wach Katshof Kolchi | Hard | [Stego](stego) | 3 | 460 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/Wach-Katchof-Kolchi) |
+| Baby Forensics | Easy | [Intro](intro) | 36 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/BabyForensics) |
+| Baby Pwn 1 | Easy | [ntro](intro) | 34 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/BabyPwn1) |
+| Baby Pwn 2 | Easy | [ntro](intro) | 34 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/BabyPwn2) |
+| Baby Rev 1 | Easy | [ntro](intro) | 40 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/BabyRev1) |
+| Baby Rev 2 | Easy | [ntro](intro) | 37 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/BabyRev2) |
