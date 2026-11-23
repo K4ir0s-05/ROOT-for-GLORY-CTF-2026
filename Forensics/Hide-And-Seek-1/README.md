@@ -1,4 +1,4 @@
-# HID and SEEK 1
+# HIDE and SEEK 1
 
 | | |
 |---|---|
