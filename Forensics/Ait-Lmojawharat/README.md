@@ -118,9 +118,8 @@ In CyberChef: *From Base64*, then *XOR* with the key `SHA-256("V4LT-Q8X2")` (hex
 
 ### Step 4: seal.3, the picture
 
-`ppt/media/image4.png` is a picture of a gem. At the top left there is a text so pale that it cannot be seen (the values are around 252 on 255). A strong **autocontrast** reveals it:
+ At the top left there is a text so pale that it cannot be seen (the values are around 252 on 255). A strong **autocontrast** reveals it:
 
-![pale text before and after](images/pale-before-after.png)
 
 > second skin: the lowest bit of the blue
 
