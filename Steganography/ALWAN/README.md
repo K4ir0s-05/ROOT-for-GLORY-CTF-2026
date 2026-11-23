@@ -256,7 +256,6 @@ GCDSTE{k4ir0s_K4n_Ch4k_Bl1_R4k_4lw4n}
 - **Decode every line.** Some of them are decoys.
 - **Keys can be derived, not stored.** Here the key comes from the riddle answer and an image property.
 - **LSB is not always consecutive.** Tools like `zsteg` only know classic patterns: when they find nothing, write your own extraction with a custom stride and start.
-- **Never recompress the image.** JPEG or social-media compression destroys LSBs.
 
 ## Tools used
 
