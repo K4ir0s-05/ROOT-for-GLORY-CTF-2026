@@ -32,7 +32,7 @@ Club GCDSTE ENSA-M(https://github.com/GCDSTE-ENSA-M) is a cybersecurity team bas
 | Tchwich | Easy | [Stego](stego) | 21 | 100 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/Tchwich) |
 | ALWAN | Medium | [Stego](stego) | 0 | 500 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/ALWAN) |
 | Wach Katshof Kolchi | Hard | [Stego](stego) | 3 | 460 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Steganography/Wach-Katchof-Kolchi) |
-| Baby Forensics | Easy | [Intro](intro) | 36 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/Baby Forensics) |
+| Baby Forensics | Easy | [Intro](intro) | 36 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/Baby-Forensics) |
 | Baby Pwn 1 | Easy | [Intro](intro) | 34 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/Baby-Pwn-1) |
 | Baby Pwn 2 | Easy | [Intro](intro) | 34 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/Baby-Pwn-2) |
 | Baby Rev 1 | Easy | [Intro](intro) | 40 | 50 | [K4ir0s](https://github.com/K4ir0s-05) | [Writeup](Intro/Baby-Rev-1) |
