@@ -127,6 +127,8 @@ CyberChef recipe, input = ciphertext in hex:
 AES_Decrypt({'option':'Hex','string':'431fa967b7e5ace6f2127dd7c8d6d3b1731d6b1a34867f3fbaf2f09371cf6303'},{'option':'Hex','string':'abf24c59f05efdf2aa685141ee29a57d'},'CTR','Hex','Raw',{'option':'Hex','string':''},{'option':'Hex','string':''})
 ```
 
+![cyberchef part 2](images/cyberchef-part2.png)
+
 Result: `_K4n_Ch4k_Bl` (**part 2**). The same recipe on the other hex line (`b659b006...`) gives only random bytes: it is the decoy.
 
 ### Step 5: Extract the LSBs (part 3)
@@ -168,6 +170,8 @@ Same CyberChef recipe as step 4, with this IV and this ciphertext:
 ```
 AES_Decrypt({'option':'Hex','string':'431fa967b7e5ace6f2127dd7c8d6d3b1731d6b1a34867f3fbaf2f09371cf6303'},{'option':'Hex','string':'b5fa2daecf8b1ca6ed41a903a97254ab'},'CTR','Hex','Raw',{'option':'Hex','string':''},{'option':'Hex','string':''})
 ```
+
+![cyberchef part 3](images/cyberchef-part3.png)
 
 Result: `1_R4k_4lw4n}` (**part 3**).
 
