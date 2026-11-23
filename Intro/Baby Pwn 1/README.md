@@ -20,7 +20,7 @@
 
 ## Files
 
-- [`files/parts.7z`](gpg): Challenge executable.
+- [`files/gpg`](gpg): Challenge executable.
 
 ## Solution
 
