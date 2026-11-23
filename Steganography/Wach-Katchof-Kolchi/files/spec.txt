@@ -1,0 +1,36 @@
+had spec kaywssf les premitives li khdmt bihom. matssnach mno chi secret akhy(okhty) :
+la cle, le token, le mot de passe et le flag ara mat3rg.
+
+1. Alphabet du carrier (base32 a mot-cle)
+   - Base : abcdefghijklmnopqrstuvwxyz234567 (32 symboles)
+   - On place d'abord les caracteres de la CLE qui existent dans la base
+     (dans l'ordre d'apparition, sans doublon), puis les autres dans l'ordre normal.
+   - Chaque symbole = 5 bits. 
+   On decode les fragments du carrier, dans l'ordre du
+     stream, bout a bout.
+
+
+2. Carrier decode : 32 octets
+   ct (4 octets) | salt (16 octets) | nonce (12 octets)
+
+3. Honey cipher (ct -> 4 mots)
+   Lexique de 256 mots : LEX[16*i + j] = A[i] + B[j]
+   A = ba ze mo ki sa lu ta re ha ni do fa gu ya wa che
+   B = rak lim dan bou fel mat zar ssa hib nou qar jed tir wan ley kar
+   keystream = sha256(KEY | "|honey|" | n sur 4 octets big-endian), n = 0, 1, ...
+              
+   mot_k = LEX[(ct[k] - keystream[k]) mod 256]      pour k = 0..3
+   Une mauvaise cle donne toujours 4 mots valides (pas de feedback ici).
+
+4. Gate
+   mot_de_passe = mot_0 "-" mot_1 "-" mot_2 "-" mot_3
+   cle_AES      = scrypt(mot_de_passe, salt, N=2^16, r=8, p=1, dkLen=32)
+   Essaie AES-256-GCM (nonce du carrier, pas d'AAD) 
+   Format d'un objet : ciphertext || tag (16 octets).
+   Un seul passe le tag. (a supprime)
+
+Notes
+   - KEY rah chaine ASCII ; kayssla7 l'alphabet et pour le
+     keystream honey .
+
+Walatgolo mathlitch fikom, K4ir0s daz hna.
