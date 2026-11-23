@@ -101,7 +101,7 @@ Only the line starting with `GCDSTE{` is the real beginning of the flag. The oth
 
 The challenge text gives the recipe: `key = SHA-256("riddle+largeurdel'image")`, that is **riddle answer + image width** (*largeur* = width).
 
-- Riddle answer: **`4lw4n`** (*alwan* = "colors" in Arabic, and the riddle describes a rainbow). This is also the file name, and the hint released during the event.
+- Riddle answer: **`4lw4n`** (*Alwan* means *colors* in Arabic, but I actually meant LGBTQ+ when I used it in Darija, and the riddle describes a rainbow(So I hope you understood what I meant). This is also the file name, and the hint released during the event.
 - Width: **`640`** (from step 1).
 
 In CyberChef, `4lw4n640` with **SHA2 (size 256)**:
