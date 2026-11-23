@@ -263,7 +263,7 @@ USB 5 + rev13: GCDxGLORY{tkhb1t_t43y1t_ol9it1n1_br4v0}
 GCDxGLORY{tkhb1t_t43y1t_ol9it1n1_br4v0}
 ```
 
-## What players should learn
+## Main Ideas For This Chall
 
 - A USB capture can contain **several devices** on the same endpoint number: always separate them by **device address**.
 - Rebuilding a **USB Mass Storage** disk from `READ(10)` data blocks.
