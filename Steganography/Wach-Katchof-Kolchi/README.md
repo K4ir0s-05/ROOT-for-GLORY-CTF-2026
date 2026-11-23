@@ -18,11 +18,12 @@
 
 *(Rough meaning: B0uB0u is looking for a job and wants to be a driver for me. His CV caused me trouble, but there is a hidden touch in it. "Look well, and don't forget to look..." Correct this if you meant something else.)*
 
-**Flag format:** `GCDSTE{...}`
+**Flag format:** `GCDSTE{...}` 
 
 ## Files
 
 - [`files/cv_b0ub0u.pdf`](files/cv_b0ub0u.pdf): a one-page CV of a driver called B0uB0u
+- [`files/spec.txt`](files/spec.txt): the spec of the primitives (alphabet, carrier layout, honey cipher, gate), given to players without any secret
 
 ## TL;DR
 
@@ -183,7 +184,7 @@ car = bytes(int(bits[i:i+8], 2) for i in range(0, len(bits) - 7, 8))
 
 ### Step 7: Honey cipher, from 4 bytes to 4 words
 
-Following the spec given to players: there is a **lexicon of 256 words**, `LEX[16*i + j] = A[i] + B[j]` (16 syllables `A`, 16 syllables `B`). The keystream is `sha256(KEY | "|honey|" | n)` with `n` on 4 bytes big-endian. Each word is `LEX[(ct[k] - ks[k]) mod 256]`.
+Following the spec given to players ([`spec.txt`](files/spec.txt)): there is a **lexicon of 256 words**, `LEX[16*i + j] = A[i] + B[j]` (16 syllables `A`, 16 syllables `B`). The keystream is `sha256(KEY | "|honey|" | n)` with `n` on 4 bytes big-endian. Each word is `LEX[(ct[k] - ks[k]) mod 256]`.
 
 For the right key the keystream starts with `b7ef08d3`:
 
